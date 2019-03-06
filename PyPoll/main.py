@@ -8,10 +8,11 @@ election_data_csv = os.path.join("Resources", "election_data.csv")
 #open csv data to report on
 with open(election_data_csv, newline='') as election_data:
     election_reader = csv.reader(election_data, delimiter=',')
-    #save header if I need it, and move cursor past header column
+    
+    #save header if I need it, and move cursor past header row
     election_header = next(election_reader)
 
-    #this get the vote counter, and appends all voted candidates to a list
+    #this for loop is the vote counter, and appends all voted candidates to a list
     #could omit the counter and call a len() on the created list, but i kept it for learning purposes
 
     vote_counter = 0
@@ -27,7 +28,7 @@ with open(election_data_csv, newline='') as election_data:
     #convert to list to iterate
     candidates_set_list = list(candidates_set)
 
-    #used len() to tell me how many candidates
+    #used len() to tell me how many candidates in my list
     number_of_candidates = len(candidates_set_list)
 
     #created 2 for loops
